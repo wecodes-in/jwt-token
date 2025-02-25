@@ -19,7 +19,7 @@ pipeline {
         #!/bin/bash
         npm install
         '''
-    }
+    
 }
 
 }
