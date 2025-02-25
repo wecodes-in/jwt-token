@@ -27,7 +27,7 @@ pipeline {
 
         stage('Deploy to EC2') {
             steps {
-                sshagent(['jenkins-ec2-key]) {
+                sshagent(['jenkins-ec2-key']) {
                     sh '''
                     scp -r dist/* ubuntu@ip-172-31-30-137:/var/www/html/
                     ssh ubuntu@ip-172-31-30-137 "sudo systemctl restart nginx"
