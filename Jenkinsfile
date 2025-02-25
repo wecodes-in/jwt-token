@@ -14,10 +14,13 @@ pipeline {
         }
 
         stage('Install Dependencies') {
-            steps {
-                sh 'npm install'
-            }
-        }
+    steps {
+        sh '''
+        export PATH=/opt/homebrew/bin:/usr/local/bin:$PATH
+        npm install
+        '''
+    }
+}
 
         stage('Build React Vite App') {
             steps {
